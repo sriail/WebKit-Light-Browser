@@ -18,15 +18,15 @@ def show_import_structure():
     
     print("Step 2: Specify required library versions")
     print("   Code: gi.require_version('Gtk', '3.0')")
-    print("   Code: gi.require_version('WebKit2', '4.0')")
+    print("   Code: gi.require_version('WebKit', '6.0')")
     print()
     
     print("Step 3: Import modules from gi.repository")
-    print("   Code: from gi.repository import Gtk, WebKit2, GLib")
+    print("   Code: from gi.repository import Gtk, WebKit, GLib")
     print()
     
     print("Step 4: Create WebKit WebView instance")
-    print("   Code: webview = WebKit2.WebView()")
+    print("   Code: webview = WebKit.WebView()")
     print()
     
     print("Step 5: Use WebKit API methods")
@@ -52,12 +52,12 @@ def show_import_structure():
         print("  Install: pip3 install PyGObject")
     
     print()
-    print("Note: Full WebKit2GTK functionality requires system libraries:")
+    print("Note: Full WebKitGTK functionality requires system libraries:")
     print("  - GTK+ 3.0")
-    print("  - WebKit2GTK 4.0")
+    print("  - WebKitGTK 6.0")
     print()
     print("Install on Ubuntu/Debian:")
-    print("  sudo apt-get install gir1.2-gtk-3.0 gir1.2-webkit2-4.0")
+    print("  sudo apt-get install gir1.2-gtk-3.0 gir1.2-webkit-6.0")
     print()
     print("=" * 60)
 
