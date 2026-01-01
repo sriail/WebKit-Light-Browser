@@ -25,7 +25,7 @@ def test_imports():
     try:
         gi.require_version('Gtk', '3.0')
         print("   ✓ GTK+ 3.0 version requirement set")
-    except (ValueError, AttributeError) as e:
+    except ValueError as e:
         print(f"   ✗ Failed to set GTK version: {e}")
         print("   Note: This is expected if GTK is not installed")
         print("   Install with: sudo apt-get install gir1.2-gtk-3.0")
@@ -36,7 +36,7 @@ def test_imports():
     try:
         gi.require_version('WebKit2', '4.0')
         print("   ✓ WebKit2 4.0 version requirement set")
-    except (ValueError, AttributeError) as e:
+    except ValueError as e:
         print(f"   ✗ Failed to set WebKit2 version: {e}")
         print("   Note: This is expected if WebKit2GTK is not installed")
         print("   Install with: sudo apt-get install gir1.2-webkit2-4.0")
