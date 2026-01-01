@@ -8,9 +8,9 @@ import gi
 
 # Require specific versions
 gi.require_version('Gtk', '3.0')
-gi.require_version('WebKit2', '4.0')
+gi.require_version('WebKit', '6.0')
 
-from gi.repository import Gtk, WebKit2, GLib
+from gi.repository import Gtk, WebKit, GLib
 
 
 class BrowserWindow(Gtk.Window):
@@ -29,7 +29,7 @@ class BrowserWindow(Gtk.Window):
         vbox.pack_start(toolbar, False, False, 0)
         
         # Create WebKit WebView
-        self.webview = WebKit2.WebView()
+        self.webview = WebKit.WebView()
         
         # Create scrolled window for webview
         scrolled_window = Gtk.ScrolledWindow()
@@ -115,7 +115,7 @@ class BrowserWindow(Gtk.Window):
     
     def on_load_changed(self, webview, load_event):
         """Update URL entry when page loads"""
-        if load_event == WebKit2.LoadEvent.COMMITTED:
+        if load_event == WebKit.LoadEvent.COMMITTED:
             uri = webview.get_uri()
             if uri:
                 self.url_entry.set_text(uri)

@@ -19,7 +19,7 @@ check-deps:
 	@which python3 > /dev/null || (echo "ERROR: python3 not found" && exit 1)
 	@python3 -c "import gi" 2>/dev/null || (echo "ERROR: PyGObject not installed" && exit 1)
 	@python3 -c "import gi; gi.require_version('Gtk', '3.0'); from gi.repository import Gtk" 2>/dev/null || (echo "ERROR: GTK+ 3 bindings not found" && exit 1)
-	@python3 -c "import gi; gi.require_version('WebKit2', '4.0'); from gi.repository import WebKit2" 2>/dev/null || (echo "ERROR: WebKit2GTK bindings not found" && exit 1)
+	@python3 -c "import gi; gi.require_version('WebKit', '6.0'); from gi.repository import WebKit" 2>/dev/null || (echo "ERROR: WebKitGTK bindings not found" && exit 1)
 	@echo "All dependencies are installed!"
 
 install:

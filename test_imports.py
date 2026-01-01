@@ -31,35 +31,35 @@ def test_imports():
         print("   Install with: sudo apt-get install gir1.2-gtk-3.0")
         return False
     
-    # Test 3: Require WebKit2 version
-    print("3. Testing WebKit2 4.0 requirement...")
+    # Test 3: Require WebKit version
+    print("3. Testing WebKit 6.0 requirement...")
     try:
-        gi.require_version('WebKit2', '4.0')
-        print("   ✓ WebKit2 4.0 version requirement set")
+        gi.require_version('WebKit', '6.0')
+        print("   ✓ WebKit 6.0 version requirement set")
     except (ValueError, AttributeError) as e:
-        print(f"   ✗ Failed to set WebKit2 version: {e}")
-        print("   Note: This is expected if WebKit2GTK is not installed")
-        print("   Install with: sudo apt-get install gir1.2-webkit2-4.0")
+        print(f"   ✗ Failed to set WebKit version: {e}")
+        print("   Note: This is expected if WebKitGTK is not installed")
+        print("   Install with: sudo apt-get install gir1.2-webkit-6.0")
         return False
     
     # Test 4: Import from gi.repository
     print("4. Testing gi.repository imports...")
     try:
-        from gi.repository import Gtk, WebKit2, GLib
+        from gi.repository import Gtk, WebKit, GLib
         print("   ✓ Gtk imported successfully")
-        print("   ✓ WebKit2 imported successfully")
+        print("   ✓ WebKit imported successfully")
         print("   ✓ GLib imported successfully")
     except ImportError as e:
         print(f"   ✗ Failed to import from gi.repository: {e}")
         return False
     
-    # Test 5: Verify WebKit2.WebView class exists
-    print("5. Testing WebKit2.WebView class...")
+    # Test 5: Verify WebKit.WebView class exists
+    print("5. Testing WebKit.WebView class...")
     try:
-        webview_class = WebKit2.WebView
-        print(f"   ✓ WebKit2.WebView class available: {webview_class}")
+        webview_class = WebKit.WebView
+        print(f"   ✓ WebKit.WebView class available: {webview_class}")
     except AttributeError as e:
-        print(f"   ✗ WebKit2.WebView not found: {e}")
+        print(f"   ✗ WebKit.WebView not found: {e}")
         return False
     
     print("-" * 50)
